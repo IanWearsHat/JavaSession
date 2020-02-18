@@ -13,9 +13,9 @@ public class Game
 {
     private final int rowCount = 10;
     private final int colCount = 10;
-    private final int debrisCount = 10;
+    private final int debrisCount = 15;
     boolean[][] grid;
-    private Location playerLoc, robotLoc;
+    public Location playerLoc, robotLoc;
 
 
     /**
@@ -249,7 +249,7 @@ public class Game
      * Obtain a random empty location within the board
      * @return The random empty location
      */
-    private Location randomEmptyLocation()
+    public Location randomEmptyLocation()
     {
         Location temp;
         
@@ -258,6 +258,15 @@ public class Game
         } while (getDebris(temp) || temp.equals(robotLoc) || temp.equals(playerLoc));
 
         return temp;
+    }
+    
+    public void setLocation(String location, Location newLocation) {
+    	if (location == "player") {
+    		playerLoc = newLocation;
+    	}
+    	else if (location == "robot") {
+    		robotLoc = newLocation;
+    	}
     }
     
 }

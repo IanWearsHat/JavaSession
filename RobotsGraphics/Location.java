@@ -7,7 +7,7 @@
  */
 public class Location
 {
-    private int x, y;
+    public int x, y;
     /**
      * Constructor
      * @param row  This Locations's row
